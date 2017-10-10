@@ -1,3 +1,10 @@
+# Alfresco Share Municipal Agendas Module
+
+Modifications to allow management of the agendas for Public presentation.
+
+//see also Alfresco Repo Municipal Agendas Repo 
+
+
 # Alfresco Share JAR Module - SDK 3
 
 To run this module use `mvn clean install -DskipTests=true alfresco:run` or `./run.sh` and verify that it 
