@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Share configuration related to this particular Share module extension, such as:
      - Doclib action config
      - Form config
@@ -19,18 +20,16 @@
     <config evaluator="string-compare" condition="DocumentLibrary">
         <aspects>
             <visible>
-                <visible>
-				<aspect name="cocag:webable" />
-				<aspect name="cocag:meeting" />
-				<aspect name="cocag:agenda" />
-				<aspect name="cocag:commentary" />
-				<aspect name="cocag:commentarySupport" />
-				<aspect name="cocag:minute" />
-				<aspect name="cocag:claim" />
-				<aspect name="cocag:approvable" />
-				<aspect name="cocag:sortable" />
+				<aspect name="agnd:webable" />
+				<aspect name="agnd:meeting" />
+				<aspect name="agnd:agenda" />
+				<aspect name="agnd:commentary" />
+				<aspect name="agnd:commentarySupport" />
+				<aspect name="agnd:minute" />
+				<aspect name="agnd:claim" />
+				<aspect name="agnd:approvable" />
+				<aspect name="agnd:sortable" />
 			</visible>
-            </visible>
             <addable> <!-- defaults to visible config -->
             </addable>
             <removeable> <!-- defaults to visible config -->
@@ -39,7 +38,7 @@
         <types>
             <!-- Define the ACME base doc type as decedent from cm:content -->
             <type name="cm:content">
-				<subtype name="cocag:doc" />
+				<subtype name="agnd:doc" />
             </type>
         </types>
     </config>
@@ -80,7 +79,7 @@
     <!-- __________________________________ acme:document base type _________________________________________________-->
 
     <!-- View and Edit forms for acme:document -->
-    <config evaluator="node-type" condition="cocag:doc">
+    <config evaluator="node-type" condition="agnd:doc">
         <forms>
             <!-- Default form configuration for the cm:content type -->
             <form>
@@ -181,7 +180,11 @@
                     <show id="surf:widgetType"/>
                     <show id="surf:mid"/>
                     <show id="surf:label"/>
-					<show id="cocag:commentarySupport" />
+					<show id="agnd:commentarySupport" />
+					
+					<show id="agnd:meeting" />
+					<show id="agnd:agenda"/>
+					<show id="agnd:commentary" />
 
                 </field-visibility>
                 <appearance>
@@ -342,84 +345,84 @@
 
     
 
-	<config evaluator="aspect" condition="cocag:webable">
+	<config evaluator="aspect" condition="agnd:webable">
 		<forms>
 			<form>
 				<field-visibility>
-					<show id="cocag:published" />
-					<show id="cocag:isActive" />
+					<show id="agnd:published" />
+					<show id="agnd:isActive" />
 				</field-visibility>
 				<appearance>
-					<field id="cocag:published" label-id="prop.cocag_published" />
-					<field id="cocag:isActive" label-id="prop.cocag_isActive" />
+					<field id="agnd:published" label-id="prop.agnd_published" />
+					<field id="agnd:isActive" label-id="prop.agnd_isActive" />
 				</appearance>
 			</form>
 		</forms>
 	</config>
-	<config evaluator="aspect" condition="cocag:meeting">
+	<config evaluator="aspect" condition="agnd:meeting">
 		<forms>
 			<form>
 				<field-visibility>
-					<show id="cocag:authority" />
-					<show id="cocag:meetingDateTime" />
-					<show id="cocag:location" />
-					<show id="cocag:openingPrayer" />
+					<show id="agnd:authority" />
+					<show id="agnd:meetingDateTime" />
+					<show id="agnd:location" />
+					<show id="agnd:openingPrayer" />
 				</field-visibility>
 				<appearance>
-					<field id="cocag:authority" label-id="prop.cocag_authority" />
-					<field id="cocag:meetingDateTime" label-id="prop.cocag_meetingDateTime" />
-					<field id="cocag:location" label-id="prop.cocag_location" />
-					<field id="cocag:openingPrayer" label-id="prop.cocag_openingPrayer" />
+					<field id="agnd:authority" label-id="prop.agnd_authority" />
+					<field id="agnd:meetingDateTime" label-id="prop.agnd_meetingDateTime" />
+					<field id="agnd:location" label-id="prop.agnd_location" />
+					<field id="agnd:openingPrayer" label-id="prop.agnd_openingPrayer" />
 				</appearance>
 			</form>
 		</forms>
 	</config>
-	<config evaluator="aspect" condition="cocag:commentary">
+	<config evaluator="aspect" condition="agnd:commentary">
 		<forms>
 			<form>
 				<field-visibility>
-					<show id="cocag:displayOrder" />
-					<show id="cocag:displayComment" />
+					<show id="agnd:displayOrder" />
+					<show id="agnd:displayComment" />
 				</field-visibility>
 				<appearance>
-					<field id="cocag:displayOrder" label-id="prop.cocag_displayOrder" />
-					<field id="cocag:displayComment" label-id="prop.cocag_displayComment" />
+					<field id="agnd:displayOrder" label-id="prop.agnd_displayOrder" />
+					<field id="agnd:displayComment" label-id="prop.agnd_displayComment" />
 				</appearance>
 			</form>
 		</forms>
 	</config>
-	<config evaluator="aspect" condition="cocag:minute">
+	<config evaluator="aspect" condition="agnd:minute">
 		<forms>
 			<form>
 				<field-visibility>
-					<show id="cocag:minutesMeetingDate" />
+					<show id="agnd:minutesMeetingDate" />
 				</field-visibility>
 				<appearance>
-					<field id="cocag:minutesMeetingDate" label-id="prop.cocag_minutesMeetingDate" />
+					<field id="agnd:minutesMeetingDate" label-id="prop.agnd_minutesMeetingDate" />
 				</appearance>
 			</form>
 		</forms>
 	</config>
-	<config evaluator="aspect" condition="cocag:approvable">
+	<config evaluator="aspect" condition="agnd:approvable">
 		<forms>
 			<form>
 				<field-visibility>
-					<show id="cocag:isApproved" />
+					<show id="agnd:isApproved" />
 				</field-visibility>
 				<appearance>
-					<field id="cocag:isApproved" label-id="prop.cocag_isApproved" />
+					<field id="agnd:isApproved" label-id="prop.agnd_isApproved" />
 				</appearance>
 			</form>
 		</forms>
 	</config>
-	<config evaluator="aspect" condition="cocag:commentarySuppport">
+	<config evaluator="aspect" condition="agnd:commentarySuppport">
 		<forms>
 			<form>
 				<field-visibility>
-					<show id="cocag:commentaryDocument" />
+					<show id="agnd:commentaryDocument" />
 				</field-visibility>
 				<appearance>
-					<field id="cocag:commentaryDocument" label-id="prop.cocag_commentaryDocument" />
+					<field id="agnd:commentaryDocument" label-id="prop.agnd_commentaryDocument" />
 				</appearance>
 			</form>
 		</forms>
