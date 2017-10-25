@@ -1,2 +1,5 @@
 /target/
 /share.log
+/alfresco.log*
+/.project
+/.classpath
